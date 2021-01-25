@@ -32,7 +32,7 @@ def lib_append(name_, auth_, year_, desc_):
 
 
 def lib_filter(root, name_, auth_, year_, desc_):
-    full_lib = quick_sort(import_func())
+    full_lib = sorted(import_func())
     lib_to_show = []
     for i in range(len(full_lib)):
         if all([name_ in full_lib[i][0] and auth_ in full_lib[i][1] and
@@ -42,7 +42,7 @@ def lib_filter(root, name_, auth_, year_, desc_):
 
 
 def change_entry(root, name_, auth_, year_, desc_, name_old, auth_old, year_old, desc_old):
-    full_lib = quick_sort(import_func())
+    full_lib = sorted(import_func())
     nm = name_.get("1.0", 'end-1c')
     auth = auth_.get("1.0", 'end-1c')
     yr = year_.get("1.0", 'end-1c')
@@ -65,7 +65,7 @@ def change_entry(root, name_, auth_, year_, desc_, name_old, auth_old, year_old,
 
 
 def remove_entry(root, name_, auth_, year_, desc_):
-    full_lib = quick_sort(import_func())
+    full_lib = sorted(import_func())
     str_to_search = f'{name_};{auth_};{year_};{desc_}'
     join_lst = joined_list(full_lib)
     ind_ = binary_search(str_to_search, join_lst)
@@ -78,23 +78,23 @@ def remove_entry(root, name_, auth_, year_, desc_):
     i_c.search_books(root, full_lib)
 
 
-def quick_sort(container):
-    lst_less = []
-    lst_equal = []
-    lst_greater = []
-
-    if len(container) > 1:
-        base_elem = container[0]
-        for elem in container:
-            if elem < base_elem:
-                lst_less.append(elem)
-            elif elem == base_elem:
-                lst_equal.append(elem)
-            elif elem > base_elem:
-                lst_greater.append(elem)
-        return quick_sort(lst_less) + lst_equal + quick_sort(lst_greater)
-    else:
-        return container
+# def quick_sort(container):
+#     lst_less = []
+#     lst_equal = []
+#     lst_greater = []
+#
+#     if len(container) > 1:
+#         base_elem = container[0]
+#         for elem in container:
+#             if elem < base_elem:
+#                 lst_less.append(elem)
+#             elif elem == base_elem:
+#                 lst_equal.append(elem)
+#             elif elem > base_elem:
+#                 lst_greater.append(elem)
+#         return quick_sort(lst_less) + lst_equal + quick_sort(lst_greater)
+#     else:
+#         return container
 
 
 def binary_search(elem, arr):
