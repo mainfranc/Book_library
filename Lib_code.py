@@ -119,7 +119,4 @@ def binary_search(elem, arr):
 
 
 def joined_list(lst):
-    result = []
-    for i in lst:
-        result.append(';'.join(i))
-    return result
+    return [';'.join(i) for i in lst]
