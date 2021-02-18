@@ -12,6 +12,7 @@ class Interface:
             but_.pack()
             self.root.mainloop()
 
+
     def __init__(self):
         self.__full_lib = self.import_func()
         self.__root = None
@@ -26,6 +27,7 @@ class Interface:
             for line in self.__full_lib:
                 source_file.write(';'.join(line))
 
+    # Interface Methods
     def main(self):
         self.__root = tk.Tk()
         self.__root.title('Book library')
@@ -139,14 +141,7 @@ class Interface:
         y_scrollbar.pack(side="right", fill="y")
         self.__root.mainloop()
 
-    @staticmethod
-    def import_func():
-        result = []
-        with open('Full_library.txt', 'r') as source_file:
-            for rw in source_file.readlines():
-                result.append(tuple(rw.split(';')))
-        return result
-
+    # Library Methods
     def lib_append(self):
         self.__full_lib = self.import_func()
         nm = self.__book_name_text.get("1.0", 'end-1c')
@@ -196,7 +191,7 @@ class Interface:
             self.PopUp("Please fill book name and author fields")
 
     def remove_entry(self, name_, auth_, year_, desc_):
-        self.__full_lib = sorted(self.__full_lib)
+        self.__full_lib = sorted(self.__full_lib,)
         str_to_search = f'{name_};{auth_};{year_};{desc_}'
         join_lst = self.joined_list(self.__full_lib)
         ind_ = self.binary_search(str_to_search, join_lst)
@@ -228,3 +223,11 @@ class Interface:
             if arr[beg_d + len_of_curr_d - 1] == elem:
                 return beg_d + len_of_curr_d - 1
         return None
+
+    @staticmethod
+    def import_func():
+        result = []
+        with open('Full_library.txt', 'r') as source_file:
+            for rw in source_file.readlines():
+                result.append(tuple(rw.split(';')))
+        return result
