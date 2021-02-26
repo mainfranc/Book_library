@@ -1,5 +1,0 @@
-Else One;King;1985;best hotel guide
-Flat World;Pratchett;1980;funny book
-Hell and peace;Tolstoy;1869;very loooong one
-Shining;King;1985;best hotel guide
-War and peace;Tolstoy;1869;very loooong one
