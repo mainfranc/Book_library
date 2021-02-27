@@ -1,7 +1,0 @@
-Another_book;you;2019;Lalala
-Flat World;Pratchett;1980;funny book
-Hell and peace;Tolstoy;1869;very loooong one
-OLOLO;Me;1900;
-Random_name_changed;Me;2021;some book
-Shining;King;1985;best hotel guide
-War and peace;Tolstoy;1869;very loooong one
